@@ -17,9 +17,13 @@ API Keys are secured via *xcconfig* file and referenced via the source's plist f
     - [x] Comic Book Title <br/>
     - [x] Description <br/>
     - [x] Cover Image <br/>
+- [x] Implement at least one UI and unit test <br/>
+    - [x] Unit Test 1 <br/>
+    - [x] UI Test 1 <br/>
 - [x] Specify wich libraries you are using: <br/>
     - [NSHash](https://github.com/jerolimov/NSHash) - NSHash adds hashing methods to NSString and NSData.  Requried to sign API requests. <br/>
-- [x] Implement at least one UI and unit test <br/>
+- [x] Specify how to add your developer keys <br/>
+    - Replace *kAPI_PublicKey* and *kAPI_PrivateKey* in *Secrets.xcconfig* the Assets folder in the main project folder with your Public and Private keys <br/>
 
 ### Author
 By Ricardo Ruiz <br/>
