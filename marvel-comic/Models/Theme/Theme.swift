@@ -149,8 +149,6 @@ func drawUI_comicMain(parent: UIView, payload: NSDictionary) {
     description.font = UIFont(name:"AvenirNextCondensed-BoldItalic", size: 19.0)
     description.textColor = .white.withAlphaComponent(0.8)
     description.isEditable = false
-    description.text = "The deeply misguided Cardiac is causing headache for Spider-Man, taking to the streets with a new brand of vigilantism. Will Spider-Man be able to prevent the reckless destruction of the TechToy factory? The return of Cletus Kasady, stirring up trouble on Ryker's Island as only a true thug can!"
-        
     parent.addSubview(description)
     
     // Helper Functions
@@ -160,15 +158,15 @@ func drawUI_comicMain(parent: UIView, payload: NSDictionary) {
 
     func downloadImage(from url: URL) {
         
-        print("Download Started")
         getData(from: url) { data, response, error in
             guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
             DispatchQueue.main.async() {
                 imageCover.image = UIImage(data: data)
                 posterFrame.image = UIImage(data: data)
                 title.text = (payload.object(forKey: "title") as! String)
+                description.text = (payload.object(forKey: "description") as! String)
+
+                print("payload: \(payload)")
             }
         }
     }
