@@ -35,6 +35,12 @@
 		8CFDA9CC26C9E200006A8403 /* test_image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8CFDA9CB26C9E200006A8403 /* test_image.jpeg */; };
 		8CFDA9CD26C9E200006A8403 /* test_image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8CFDA9CB26C9E200006A8403 /* test_image.jpeg */; };
 		8CFDA9CE26C9E200006A8403 /* test_image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8CFDA9CB26C9E200006A8403 /* test_image.jpeg */; };
+		8CFDA9E326C9F671006A8403 /* NSData+NSHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFDA9DF26C9F671006A8403 /* NSData+NSHash.m */; };
+		8CFDA9E426C9F671006A8403 /* NSData+NSHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFDA9DF26C9F671006A8403 /* NSData+NSHash.m */; };
+		8CFDA9E526C9F671006A8403 /* NSString+NSHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFDA9E026C9F671006A8403 /* NSString+NSHash.m */; };
+		8CFDA9E626C9F671006A8403 /* NSString+NSHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFDA9E026C9F671006A8403 /* NSString+NSHash.m */; };
+		8CFDA9E726C9F671006A8403 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CFDA9E126C9F671006A8403 /* LICENSE.txt */; };
+		8CFDA9E826C9F671006A8403 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CFDA9E126C9F671006A8403 /* LICENSE.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +84,11 @@
 		8CFDA9C226C9DD2E006A8403 /* API.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
 		8CFDA9C726C9DF43006A8403 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		8CFDA9CB26C9E200006A8403 /* test_image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_image.jpeg; sourceTree = "<group>"; };
+		8CFDA9DE26C9F671006A8403 /* NSString+NSHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSHash.h"; sourceTree = "<group>"; };
+		8CFDA9DF26C9F671006A8403 /* NSData+NSHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+NSHash.m"; sourceTree = "<group>"; };
+		8CFDA9E026C9F671006A8403 /* NSString+NSHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSHash.m"; sourceTree = "<group>"; };
+		8CFDA9E126C9F671006A8403 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		8CFDA9E226C9F671006A8403 /* NSData+NSHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+NSHash.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +142,7 @@
 				8CFDA9AA26C9DB81006A8403 /* Assets */,
 				8CFDA9A826C9DB49006A8403 /* Constants */,
 				8CFDA9A526C9DB2A006A8403 /* Delegate */,
+				8CFDA9DC26C9F5E6006A8403 /* Frameworks */,
 				8CFDA9A726C9DB43006A8403 /* Models */,
 				8CFDA9A926C9DB5B006A8403 /* ViewControllers */,
 				8CFDA9A626C9DB3A006A8403 /* UI */,
@@ -228,6 +240,26 @@
 				8CFDA9C726C9DF43006A8403 /* Theme.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		8CFDA9DC26C9F5E6006A8403 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CFDA9DD26C9F671006A8403 /* NSHash */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CFDA9DD26C9F671006A8403 /* NSHash */ = {
+			isa = PBXGroup;
+			children = (
+				8CFDA9DE26C9F671006A8403 /* NSString+NSHash.h */,
+				8CFDA9DF26C9F671006A8403 /* NSData+NSHash.m */,
+				8CFDA9E026C9F671006A8403 /* NSString+NSHash.m */,
+				8CFDA9E126C9F671006A8403 /* LICENSE.txt */,
+				8CFDA9E226C9F671006A8403 /* NSData+NSHash.h */,
+			);
+			path = NSHash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CFDA9E726C9F671006A8403 /* LICENSE.txt in Resources */,
 				8CFDA9A226C9DADB006A8403 /* Secrets.xcconfig in Resources */,
 				8CFDA97E26C9DA61006A8403 /* LaunchScreen.storyboard in Resources */,
 				8CFDA9CC26C9E200006A8403 /* test_image.jpeg in Resources */,
@@ -348,6 +381,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CFDA9E826C9F671006A8403 /* LICENSE.txt in Resources */,
 				8CFDA9A326C9DADB006A8403 /* Secrets.xcconfig in Resources */,
 				8CFDA9CD26C9E200006A8403 /* test_image.jpeg in Resources */,
 			);
@@ -374,8 +408,10 @@
 				8CFDA97226C9DA5F006A8403 /* AppDelegate.swift in Sources */,
 				8CFDA9B026C9DBF5006A8403 /* Comic.swift in Sources */,
 				8CFDA9AC26C9DBC9006A8403 /* Main.swift in Sources */,
+				8CFDA9E326C9F671006A8403 /* NSData+NSHash.m in Sources */,
 				8CFDA97426C9DA5F006A8403 /* SceneDelegate.swift in Sources */,
 				8CFDA9C826C9DF43006A8403 /* Theme.swift in Sources */,
+				8CFDA9E526C9F671006A8403 /* NSString+NSHash.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +421,9 @@
 			files = (
 				8CFDA9AD26C9DBC9006A8403 /* Main.swift in Sources */,
 				8CFDA9B126C9DBF5006A8403 /* Comic.swift in Sources */,
+				8CFDA9E426C9F671006A8403 /* NSData+NSHash.m in Sources */,
 				8CFDA98926C9DA61006A8403 /* marvel_comicTests.swift in Sources */,
+				8CFDA9E626C9F671006A8403 /* NSString+NSHash.m in Sources */,
 				8CFDA9C926C9DF43006A8403 /* Theme.swift in Sources */,
 				8CFDA9BE26C9DCFA006A8403 /* Constants.m in Sources */,
 				8CFDA9C426C9DD2E006A8403 /* API.m in Sources */,
@@ -442,6 +480,7 @@
 /* Begin XCBuildConfiguration section */
 		8CFDA99626C9DA61006A8403 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CFDA9A126C9DADB006A8403 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -503,6 +542,7 @@
 		};
 		8CFDA99726C9DA61006A8403 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CFDA9A126C9DADB006A8403 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

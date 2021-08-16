@@ -13,16 +13,14 @@
 
 #pragma mark - API
 #define kComicID @"6770"
-#define kAPIEndpoint @"http://gateway.marvel.com/v1/public/comics?ts="
-#define kAPIPrefix @"&apikey="
+#define kAPIEndpoint @"http://gateway.marvel.com/v1/public/comics/"
 
 #pragma mark - Timestamp
-#define kTimestamp [NSNumber numberWithLong:([[NSDate now] timeIntervalSince1970]*1000)]
+#define kTimestamp [NSNumber numberWithLong:([[NSDate now] timeIntervalSince1970])]
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Constants : NSObject
-+ (NSString *)generateMD5Hash:(NSString *)input;
 @end
 
 NS_ASSUME_NONNULL_END

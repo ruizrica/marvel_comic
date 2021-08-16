@@ -7,6 +7,7 @@
 
 #import "API.h"
 #import "Constants.h"
+#import "NSString+NSHash.h"
 
 @implementation API
 
@@ -14,12 +15,17 @@
     
     @try {
         // hash - md5(ts+privateKey+publicKey)
+        NSString *timestamp = [NSString stringWithFormat:@"%@",kTimestamp];
         NSString *privateKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"kAPI_PrivateKey"];
         NSString *publicKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"kAPI_PublicKey"];
-        NSString *hash = [NSString stringWithFormat:@"%@%@%@",kTimestamp,privateKey,publicKey];
-        
+        NSString *hash = [[NSString stringWithFormat:@"%@%@%@",timestamp,privateKey,publicKey] MD5];
+
         NSError *error = nil;
-        NSString *urlString = [NSString stringWithFormat:@"%@ts=%@%@%@%@&hash=%@",kAPIEndpoint,kTimestamp,kComicID,kAPIPrefix,publicKey,hash];
+        NSMutableString *urlString = [NSMutableString stringWithFormat:@"%@%@",kAPIEndpoint,kComicID];
+        [urlString appendString:[NSString stringWithFormat:@"?apikey=%@",publicKey]];
+        [urlString appendString:[NSString stringWithFormat:@"&ts=%@",timestamp]];
+        [urlString appendString:[NSString stringWithFormat:@"&hash=%@",hash]];
+        
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
         NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
