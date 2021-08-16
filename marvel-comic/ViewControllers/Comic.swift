@@ -17,7 +17,6 @@ class Comic: UIViewController {
     }
     
     func setupUI(payload: NSDictionary) {
-        
         // Loaded from Theme
         drawUI_comicMain(parent: view, payload: payload)
     }

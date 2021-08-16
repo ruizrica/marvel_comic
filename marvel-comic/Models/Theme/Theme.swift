@@ -96,7 +96,6 @@ func drawUI_comicMain_mockup(parent: UIView) {
 func drawUI_comicMain(parent: UIView, payload: NSDictionary) {
     
     // Local Constants
-    let sHeight = Int(parent.bounds.size.height)
     let sWidth = Int(parent.bounds.size.width)
     let topBarHeight = 480
     let posterWidth = 260
@@ -171,6 +170,9 @@ func drawUI_comicMain(parent: UIView, payload: NSDictionary) {
         }
     }
     
-    let imageURL = payload.object(forKey: "imageUrl")
-    downloadImage(from: URL(string: imageURL as! String)!)
+    if let imageURL = payload.object(forKey: "imageUrl") {
+        downloadImage(from: URL(string: imageURL as! String)!)
+    } else {
+        print("error downloading image...")
+    }
 }
