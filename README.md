@@ -26,10 +26,11 @@ API Keys are secured via *xcconfig* file and referenced via the source's plist f
 - [x] Specify which libraries you are using: <br/>
     - [NSHash](https://github.com/jerolimov/NSHash) - NSHash adds hashing methods to NSString and NSData.  Required to sign API requests. <br/>
 - [x] Specify how to add your developer keys <br/>
-    - Replace *kAPI_PublicKey* and *kAPI_PrivateKey* in *Secrets.xcconfig* in the Assets folder in the main project folder with your Public and Private keys <br/>
+    - Replace *kAPI_PublicKey* and *kAPI_PrivateKey* in *Secrets.xcconfig* in the Assets folder with your Public and Private keys <br/>
 
 ### Note
 - An MD5 hash is required to sign API requests.
+>
 - Warning from Xcode: *'CC_MD5' is deprecated: first deprecated in iOS 13.0 - This function is cryptographically broken and should not be used in security contexts. Clients should migrate to SHA256 (or stronger).*
 
 ### Author
