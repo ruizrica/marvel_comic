@@ -4,7 +4,7 @@
 
 ### Summary
 
-A simple two-view iOS application used to browse a Marvel comic book title, description and cover image, by *comicID*.  Written in both Swift and Objective-C to demonstrate proficiency in both legacy and current iOS methodolgies/languages.
+A simple two-view iOS application used to browse a Marvel comic book title, description and cover image, by *comicID*.  Written in both Swift and Objective-C to demonstrate proficiency in both legacy and current iOS methodologies/languages.
 The UI is written in Swift utilizing MVC architecture.  Network services are written in Objective-C using async blocks.
 
 ### API Key Security
