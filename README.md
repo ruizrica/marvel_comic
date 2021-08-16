@@ -20,6 +20,7 @@ API Keys are secured via *xcconfig* file and referenced via the source's plist f
 - [x] Implement at least one UI and unit test <br/>
     - [x] Unit Test 1 <br/>
     - [x] UI Test 1 <br/>
+- [x] Upload code to Github and provide and README file :)<br/>
 - [x] Specify which libraries you are using: <br/>
     - [NSHash](https://github.com/jerolimov/NSHash) - NSHash adds hashing methods to NSString and NSData.  Required to sign API requests. <br/>
 - [x] Specify how to add your developer keys <br/>
