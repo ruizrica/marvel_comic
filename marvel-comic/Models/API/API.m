@@ -30,22 +30,12 @@
             NSURLSessionTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                 
                 NSDictionary *resultsDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-                handler(YES,resultsDictionary);
+                handler(resultsDictionary);
             }];
             [task resume];
 
-            
-            
-            
-//            NSURLSessionUploadTask *uploadTask = [session uploadTaskWithRequest:request
-//               fromData:[NSJSONSerialization dataWithJSONObject:payload options:NSJSONWritingPrettyPrinted error:&error] completionHandler:^(NSData *data,NSURLResponse *response,NSError *error) {
-//
-//                NSDictionary *resultsDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-//                handler(YES,resultsDictionary);
-//            }];
-//            [uploadTask resume];
         } else {
-            handler(NO,@{@"error":error});
+            handler(@{@"error":error});
         }
     } @catch (NSException *exception) {
         NSLog(@"Error Creating Sale Order: %@",exception);

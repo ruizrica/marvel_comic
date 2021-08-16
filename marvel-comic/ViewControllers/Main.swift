@@ -19,6 +19,11 @@ class Main: UIViewController {
     }
 
     @objc func showComic() {
+        
+        let _: Void = API.loadComic { comic in
+            print(comic)
+        }
+        
         DispatchQueue.main.async {
             let comic = Comic()
             comic.modalPresentationStyle = .formSheet

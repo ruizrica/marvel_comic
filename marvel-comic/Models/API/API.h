@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Completion Blocks
-typedef void(^comicHandler)(BOOL successful,NSDictionary *result);
+typedef void(^comicHandler)(NSDictionary *result);
 
 @interface API : NSObject
 + (void)loadComic:(comicHandler)handler;

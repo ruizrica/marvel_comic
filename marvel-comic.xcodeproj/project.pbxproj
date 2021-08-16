@@ -32,6 +32,9 @@
 		8CFDA9C826C9DF43006A8403 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFDA9C726C9DF43006A8403 /* Theme.swift */; };
 		8CFDA9C926C9DF43006A8403 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFDA9C726C9DF43006A8403 /* Theme.swift */; };
 		8CFDA9CA26C9DF43006A8403 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFDA9C726C9DF43006A8403 /* Theme.swift */; };
+		8CFDA9CC26C9E200006A8403 /* test_image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8CFDA9CB26C9E200006A8403 /* test_image.jpeg */; };
+		8CFDA9CD26C9E200006A8403 /* test_image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8CFDA9CB26C9E200006A8403 /* test_image.jpeg */; };
+		8CFDA9CE26C9E200006A8403 /* test_image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8CFDA9CB26C9E200006A8403 /* test_image.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,7 @@
 		8CFDA9C126C9DD2E006A8403 /* API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
 		8CFDA9C226C9DD2E006A8403 /* API.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
 		8CFDA9C726C9DF43006A8403 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		8CFDA9CB26C9E200006A8403 /* test_image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_image.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,7 @@
 		8CFDA9AA26C9DB81006A8403 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				8CFDA9CB26C9E200006A8403 /* test_image.jpeg */,
 				8CFDA9A126C9DADB006A8403 /* Secrets.xcconfig */,
 				8CFDA9B326C9DCC3006A8403 /* marvel-comic-Bridging-Header.h */,
 			);
@@ -333,6 +338,7 @@
 			files = (
 				8CFDA9A226C9DADB006A8403 /* Secrets.xcconfig in Resources */,
 				8CFDA97E26C9DA61006A8403 /* LaunchScreen.storyboard in Resources */,
+				8CFDA9CC26C9E200006A8403 /* test_image.jpeg in Resources */,
 				8CFDA97B26C9DA61006A8403 /* Assets.xcassets in Resources */,
 				8CFDA97926C9DA5F006A8403 /* Main.storyboard in Resources */,
 			);
@@ -343,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CFDA9A326C9DADB006A8403 /* Secrets.xcconfig in Resources */,
+				8CFDA9CD26C9E200006A8403 /* test_image.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CFDA9A426C9DADB006A8403 /* Secrets.xcconfig in Resources */,
+				8CFDA9CE26C9E200006A8403 /* test_image.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
