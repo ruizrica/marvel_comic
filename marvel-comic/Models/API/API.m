@@ -43,14 +43,6 @@
                 NSDictionary *comic = resultsDictionary[@"data"][@"results"][0];
                 [API loadResource:comic[@"stories"][@"items"][0][@"resourceURI"] with:^(NSDictionary * _Nonnull result) {
                     
-                    NSString *inAppLinkURL = @"";
-                    for (NSDictionary *urlObject in comic[@"urls"]) {
-                        NSLog(@"urlObject: %@",urlObject);
-                        if ([urlObject[@"type"] isEqualToString:@"inAppLink"]) {
-                            inAppLinkURL = urlObject[@"url"];
-                        }
-                    }
-                    
                     NSMutableDictionary *payload = [[NSMutableDictionary alloc]init];
                     [payload setObject:comic[@"title"] forKey:@"title"];
                     [payload setObject:[NSString stringWithFormat:@"%@.jpg",comic[@"thumbnail"][@"path"]] forKey:@"imageUrl"];

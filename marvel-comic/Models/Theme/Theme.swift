@@ -151,26 +151,6 @@ func drawUI_comicMain(parent: UIView, payload: NSDictionary) {
     description.textColor = .white
     description.isEditable = false
     parent.addSubview(description)
-    
-    let issue_label = UILabel(frame: CGRect(x:(sWidth/2)-(textWidth/2),
-                                      y:sHeight-150,
-                                      width:sWidth,
-                                      height:80))
-    issue_label.font = UIFont(name:"AvenirNextCondensed-BoldItalic", size: 12.0)
-    issue_label.textColor = .white.withAlphaComponent(0.6)
-    issue_label.textAlignment = .left
-    issue_label.text = "ISSUE NUMBER:"
-    parent.addSubview(issue_label)
-    
-    let issue_number = UILabel(frame: CGRect(x:(sWidth/2)-(textWidth/2),
-                                      y:sHeight-127,
-                                      width:sWidth,
-                                      height:80))
-    issue_number.font = UIFont(name:"AvenirNextCondensed-BoldItalic", size: 18.0)
-    issue_number.textColor = .white
-    issue_number.textAlignment = .left
-    issue_number.text = "ISSUE NUMBER:"
-    parent.addSubview(issue_number)
         
     // Helper Functions
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
@@ -186,7 +166,6 @@ func drawUI_comicMain(parent: UIView, payload: NSDictionary) {
                 posterFrame.image = UIImage(data: data)
                 title.text = (payload.object(forKey: "title") as! String)
                 description.text = (payload.object(forKey: "description") as! String)
-                issue_number.text = (payload.object(forKey: "issueNumber") as! String)
                 print("payload: \(payload)")
             }
         }
