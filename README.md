@@ -31,7 +31,8 @@ API Keys are secured via *xcconfig* file and referenced via the source's plist f
 ### Note
 - An MD5 hash is required to sign API requests.
 
-    Warning from Xcode: *'CC_MD5' is deprecated: first deprecated in iOS 13.0 - This function is cryptographically broken and should not be used in security contexts. Clients should migrate to SHA256 (or stronger).*
+>Warning from Xcode: *'CC_MD5' is deprecated: first deprecated in iOS 13.0 - This function is cryptographically broken and should not be used in security contexts. Clients should migrate to SHA256 (or stronger).*
+>
 
 ### Author
 By Ricardo Ruiz <br/>
