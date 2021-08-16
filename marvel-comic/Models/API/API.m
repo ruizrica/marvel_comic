@@ -9,6 +9,10 @@
 #import "Constants.h"
 #import "NSString+NSHash.h"
 
+#pragma mark - API
+#define kComicID @"6770"
+#define kAPIEndpoint @"http://gateway.marvel.com/v1/public/comics/"
+
 @implementation API
 
 + (void)loadComic:(comicHandler)handler {
@@ -36,7 +40,14 @@
             NSURLSessionTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                 
                 NSDictionary *resultsDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-                handler(resultsDictionary);
+
+                NSDictionary *comic = resultsDictionary[@"data"][@"results"][0];
+                //NSLog(@"Comic: %@",comic);
+                
+                NSMutableDictionary *payload = [[NSMutableDictionary alloc]init];
+                [payload setObject:comic[@"title"] forKey:@"title"];
+                [payload setObject:[NSString stringWithFormat:@"%@.jpg",comic[@"thumbnail"][@"path"]] forKey:@"imageUrl"];
+                handler(payload);
             }];
             [task resume];
 

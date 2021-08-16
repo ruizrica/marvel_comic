@@ -21,13 +21,15 @@ class Main: UIViewController {
     @objc func showComic() {
         
         let _: Void = API.loadComic { comic in
+            
+            let comicbook = comic as NSDictionary
+            DispatchQueue.main.async {
+                let comic = Comic()
+                comic.setupUI(payload: comicbook)
+                comic.modalPresentationStyle = .formSheet
+                self.present(comic, animated: true, completion: nil)
+            }
             print(comic)
-        }
-        
-        DispatchQueue.main.async {
-            let comic = Comic()
-            comic.modalPresentationStyle = .formSheet
-            self.present(comic, animated: true, completion: nil)
         }
     }
 }
