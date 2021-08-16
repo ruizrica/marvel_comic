@@ -12,8 +12,6 @@
 #pragma mark - API
 #define kComicID @"6770"
 #define kAPIEndpoint @"http://gateway.marvel.com/v1/public/comics/"
-#define kAPIEndpoint_story @"http://gateway.marvel.com/v1/public/comics/"
-
 
 @implementation API
 
@@ -42,15 +40,22 @@
             NSURLSessionTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                 
                 NSDictionary *resultsDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-
                 NSDictionary *comic = resultsDictionary[@"data"][@"results"][0];
-                
                 [API loadResource:comic[@"stories"][@"items"][0][@"resourceURI"] with:^(NSDictionary * _Nonnull result) {
+                    
+                    NSString *inAppLinkURL = @"";
+                    for (NSDictionary *urlObject in comic[@"urls"]) {
+                        NSLog(@"urlObject: %@",urlObject);
+                        if ([urlObject[@"type"] isEqualToString:@"inAppLink"]) {
+                            inAppLinkURL = urlObject[@"url"];
+                        }
+                    }
                     
                     NSMutableDictionary *payload = [[NSMutableDictionary alloc]init];
                     [payload setObject:comic[@"title"] forKey:@"title"];
                     [payload setObject:[NSString stringWithFormat:@"%@.jpg",comic[@"thumbnail"][@"path"]] forKey:@"imageUrl"];
                     [payload setObject:result forKey:@"description"];
+                    [payload setObject:[NSString stringWithFormat:@"%@",comic[@"issueNumber"]]  forKey:@"issueNumber"];
                     handler(payload);
                 }];
             }];
@@ -60,7 +65,7 @@
             handler(@{@"error":error});
         }
     } @catch (NSException *exception) {
-        NSLog(@"Error Creating Sale Order: %@",exception);
+        NSLog(@"Error Loading Comic: %@",exception);
     }
 }
 
@@ -89,7 +94,6 @@
             NSURLSessionTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                 
                 NSDictionary *resultsDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-
                 NSDictionary *resource = resultsDictionary[@"data"][@"results"][0];
                 handler(resource[@"description"]);
             }];
@@ -99,7 +103,7 @@
             handler(@{@"error":error});
         }
     } @catch (NSException *exception) {
-        NSLog(@"Error Creating Sale Order: %@",exception);
+        NSLog(@"Error Loading Resource: %@",exception);
     }
 }
 
