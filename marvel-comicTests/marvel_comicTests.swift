@@ -17,17 +17,27 @@ class marvel_comicTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testAPIKeys() throws {
+        
+        // Helper Function
+        func infoForKey(_ key: String) -> String? {
+                return (Bundle.main.infoDictionary?[key] as? String)?
+                    .replacingOccurrences(of: "\\", with: "")
+         }
+        
+        let publicKey = infoForKey("kAPI_PublicKey");
+        let privateKey = infoForKey("kAPI_PrivateKey");
+        XCTAssertTrue(publicKey!.count > 0)
+        XCTAssertTrue(privateKey!.count > 0)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testAPIConntection() throws {
+        
+        // Block From Objetive-C
+        API.loadComic { comic in
+            let comicbook = comic as NSDictionary
+            XCTAssertTrue(comicbook.count > 0)
         }
     }
-
 }
