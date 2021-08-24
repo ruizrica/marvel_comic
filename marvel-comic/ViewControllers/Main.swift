@@ -27,7 +27,7 @@ class Main: UIViewController {
                 let comic = Comic()
                 comic.setupUI(payload: comicbook)
                 comic.modalPresentationStyle = .formSheet
-                self.present(comic, animated: true, completion: nil)
+                self?.present(comic, animated: true, completion: nil)
             }
         }
     }
