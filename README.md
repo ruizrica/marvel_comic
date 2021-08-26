@@ -37,4 +37,3 @@ API Keys are secured via *xcconfig* file and referenced via the source's plist f
 ### Author
 By Ricardo Ruiz <br/>
 ricardo@kenetic-labs.com <br/>
-DIRECT: 213-842-5036 <br/>
