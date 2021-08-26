@@ -1,4 +1,4 @@
-# Disney Code Test
+# Coding Demo
 
 ![Screenshot of iOS App](https://kl-store1.s3.us-west-1.amazonaws.com/rr_screenshot.jpg)
 
